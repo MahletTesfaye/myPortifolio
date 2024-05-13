@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-dark: rgb(23, 1, 29);
+    --primary-medium: rgb(81, 17, 87);
+    --primary-light: rgb(171, 51, 196); 
+    --secondary-dark: rgb(75, 75, 75);
+    --secondary-medium: rgb(224, 222, 222);
+    --secondary-light: rgb(245, 242, 242);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+    html {
+        @apply scroll-smooth font-mono
+    }
+    .button {
+        @apply py-1.5 border rounded-md px-3 bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] hover:bg-gradient-to-r hover:from-[var(--primary-light)] hover:to-[var(--primary-dark)] text-white m-3
+    }
+    .button2{
+        @apply border-2 border-[var(--primary-medium)] font-semibold py-0.5 px-2 rounded-md text-[var(--primary-medium)]  hover:bg-[var(--primary-medium)] hover:text-white bg-white
+    }
+    .button3{
+        @apply hover:text-[var(--primary-medium)] font-semibold shadow-md shadow-white backdrop-blur-lg hover:shadow-[var(--primary-light)] rounded-md hover:bg-white py-1 px-2 text-white bg-[var(--primary-medium)]
+    }
+    .nav_link {
+        @apply cursor-pointer mr-6 hidden md:block hover:w-fit hover:border-solid hover:border-b-2 hover:border-[var(--primary-dark)] font-semibold text-[var(--primary-medium)]
+    }
+    .nav_link2 {
+        @apply cursor-pointer m-1 hover:text-[var(--primary-dark)] font-semibold
+    }
 }
