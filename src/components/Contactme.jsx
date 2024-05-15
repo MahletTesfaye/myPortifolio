@@ -1,5 +1,5 @@
 import Particle from './particles';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -12,26 +12,6 @@ import { BsTelephone } from "react-icons/bs";
 // import { MdLocationOn } from "react-icons/md";
 
 const Contactme = () => {
-  const [isScreenActive, setIsScreenActive] = useState(false);
-
-  useEffect(() => {
-    const handleScreenActive = () => {
-      setIsScreenActive(true);
-    };
-
-    const handleScreenInactive = () => {
-      setIsScreenActive(false);
-    };
-
-    window.addEventListener('focus', handleScreenActive);
-    window.addEventListener('blur', handleScreenInactive);
-
-    return () => {
-      window.removeEventListener('focus', handleScreenActive);
-      window.removeEventListener('blur', handleScreenInactive);
-    };
-  }, []);
-
   const form = useRef();
   const notify = (message) => toast(message);
 
@@ -52,11 +32,11 @@ const Contactme = () => {
       );
     e.target.reset();
   };
-
+  
   return (
     <div className='p-[3%_3%] relative bg-gradient-to-tr grid sm:grid-cols-2 lg:grid-cols-3 justify-center gap-10 md:justify-between from-violet-200 to-red-100 rounded-t-3xl shadow-2xl '>
 
-      <div className={`flex flex-col gap-y-7 text-center my-auto ${isScreenActive? 'slide-in-left' : 'hidden'}`}>
+      <div className="flex flex-col gap-y-7 text-center my-auto">
         <div className="text-xl font-bold text-[var(--primary-dark)]">LET'S START <span className='text-[var(--primary-medium)]'>PROJECT WITH ME </span>👩🏻‍💻</div>
         <div className="grid gap-2 text-center px-10">
           <div className="button3 py-4 -skew-x-12">UI/UX DESIGN</div>
@@ -70,7 +50,7 @@ const Contactme = () => {
         </div>
       </div>
 
-      <div className={`container text-[var(--primary-dark)] ${isScreenActive? 'slide-in-up' : 'hidden'}`}>
+      <div className="container text-[var(--primary-dark)]">
         <Particle className="absolute !important" />
         <h1 className="font-bold mb-2">CONTACT ME</h1>
         <form ref={form} onSubmit={sendEmail} className='space-y-2'>
@@ -86,7 +66,7 @@ const Contactme = () => {
         </form>
       </div>
 
-      <div className={`w-auto h-56 sm:col-span-2 lg:col-span-1 ${isScreenActive? 'slide-in-right' : 'hidden'}`}>
+      <div className="w-auto h-56 sm:col-span-2 lg:col-span-1">
         <p className="mb-2 text-center"><b>ADDRESS</b>: 5kilo, Addis Ababa, Ethiopia</p>
         {
           <MapContainer
