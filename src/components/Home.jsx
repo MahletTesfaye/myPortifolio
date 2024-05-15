@@ -7,6 +7,8 @@ import { Databases } from "appwrite";
 const database = new Databases(client);
 const Home = () => {
     const [data, setData] = React.useState([]);
+    const [isScreenActive, setIsScreenActive] = React.useState(true);
+
     useEffect(() => {
         const fetchResume = async () => {
             try {
@@ -22,11 +24,26 @@ const Home = () => {
         };
 
         fetchResume();
+        const handleScreenActive = () => {
+            setIsScreenActive(true);
+        };
+
+        const handleScreenInactive = () => {
+            setIsScreenActive(false);
+        };
+
+        window.addEventListener('focus', handleScreenActive);
+        window.addEventListener('blur', handleScreenInactive);
+
+        return () => {
+            window.removeEventListener('focus', handleScreenActive);
+            window.removeEventListener('blur', handleScreenInactive);
+        };
     }, []);
 
     return (
         <div className="flex flex-col-reverse sm:flex-row justify-between gap-y-5">
-            <div className="my-auto sm:w-1/2">
+            <div className={`my-auto sm:w-1/2 ${isScreenActive ? 'slide-in-left' : 'hidden'}`}>
                 <div className="text-black text-center">
                     <div className="bold text-2xl hover:after:content-['_😎']">
                         Hi, I'm <b className="text-[var(--primary-medium)]">MAHLET TESFAYE</b>
@@ -52,7 +69,7 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <Image src="/my_photo.svg" className="mt-5 sm:w-1/2" alt="My Photo" />
+            <Image src="/my_photo.svg" className={`mt-5 sm:w-1/2 ${isScreenActive ? 'slide-in-right' : 'hidden'}`} alt="My Photo" />
         </div>
     );
 };

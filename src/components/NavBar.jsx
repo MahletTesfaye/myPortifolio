@@ -20,11 +20,11 @@ const TopBar = () => {
                 </Link>
                 <nav className="nav__container__actions">
                     <ul className="flex my-3 items-center">
-                        <li><Link to='Home' className="nav_link">Home</Link></li>
-                        <li><Link to='Aboutme' className="nav_link">Aboutme</Link></li>
-                        <li><Link to='Projects' className="nav_link">Projects</Link></li>
-                        <li><Link to='Blog' className="nav_link">Blog</Link></li>
-                        <li><Link to='Contactme' className=" cursor-pointer button2 hidden md:block">Contactme</Link></li>
+                        <li><Link to='Home' className="nav_link" offset={-70} >Home</Link></li>
+                        <li><Link to='Aboutme' className="nav_link" offset={-70}>Aboutme</Link></li>
+                        <li><Link to='Projects' className="nav_link" offset={-70}>Projects</Link></li>
+                        <li><Link to='Blog' className="nav_link" offset={-70}>Blog</Link></li>
+                        <li><Link to='Contactme' className="cursor-pointer button2 hidden md:block" offset={-70}>Contactme</Link></li>
                         {
                             nav ? <MdOutlineClear onClick={handleNav} className=" md:hidden size-5 cursor-pointer" /> : <FaBars onClick={handleNav} className=" md:hidden size-4 cursor-pointer" />
                         }
@@ -32,11 +32,11 @@ const TopBar = () => {
                 </nav>
             </div>
             <ul className={`md:hidden bg-white border-y-2 py-3 ${nav ? "flex flex-col shadow items-center " : 'hidden'}`}>
-                <li><Link to='Home' className="nav_link2">Home</Link></li>
-                <li><Link to='Aboutme' className="nav_link2">Aboutme</Link></li>
-                <li><Link to='Projects' className="nav_link2">Projects</Link></li>
-                <li><Link to='Blog' className="nav_link2">Blog</Link></li>
-                <li><Link to='Contactme' className=" button2">Contactme</Link></li>
+                <li><Link to='Home' className="nav_link2" offset={-70}>Home</Link></li>
+                <li><Link to='Aboutme' className="nav_link2" offset={-70}>Aboutme</Link></li>
+                <li><Link to='Projects' className="nav_link2" offset={-70}>Projects</Link></li>
+                <li><Link to='Blog' className="nav_link2" offset={-70}>Blog</Link></li>
+                <li><Link to='Contactme' className=" button2" offset={-70}>Contactme</Link></li>
             </ul>
         </div>
     );

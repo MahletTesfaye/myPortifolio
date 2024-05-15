@@ -11,9 +11,9 @@ import { Link } from "react-scroll";
 function Footer() {
     return (
         <div className="w-full font-bold pt-7 text-[14px] flex justify-around text-white h-14 sticky bottom-0 bg-gradient-to-t from-[var(--primary-dark)] to-transparent ">
-            <FaHandPointRight size={25} className='absolute bottom-0.5 left-0.5 -rotate-12' />
-            <FaHandPointLeft size={25} className='absolute bottom-0.5 right-0.5 rotate-12' />
-            <Link to="Home" className="absolute bottom-10 right-6 hover:animate-bounce cursor-pointer"><BiUpArrowCircle size={25} color="#962BAC" /></Link>
+            <FaHandPointRight size={22} className='absolute bottom-0.5 left-0.5 -rotate-12' />
+            <FaHandPointLeft size={22} className='absolute bottom-0.5 right-0.5 rotate-12' />
+            <Link to="Home" offset={-70} className="absolute bottom-10 right-6 hover:animate-bounce cursor-pointer"><BiUpArrowCircle size={25} color="#962BAC" /></Link>
             <a href="https://mail.google.com/mail/u/0/?ogbl#inbox" target="_blank" rel="noreferrer" className="flex">
                 <MdEmail />
                 <div className="hidden md:block md:ml-2">mahlettenayeah94@gmail.com</div>
