@@ -23,7 +23,7 @@ const Blog = () => {
     <>
       {
         data && data.map((item) => (
-          <div key={item.$id} className='flex flex-col md:flex-row m-[5%] p-[2%] border shadow-md rounded-xl  justify-around items-center align-middle'>
+          <div key={item.$id} className='flex flex-col md:flex-row m-[5%] p-[3%] border shadow-md rounded-xl gap-5 justify-around items-center align-middle'>
             <div><Image src={item.Image} className="h-[15rem] w-auto object-contain" /></div>
             <div className="md:w-1/2">
               <b className="text-xl">{item.Title}</b>
