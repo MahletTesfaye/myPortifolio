@@ -3,6 +3,7 @@ import client from "../lib/appwrite";
 import { CCard, CCardBody, CCardTitle, CCardText, CButton } from "@coreui/react";
 import { Databases, Query } from "appwrite";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const database = new Databases(client);
 
@@ -34,13 +35,14 @@ const Projects = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 p-[5%] gap-10 items-start">
                 {
                     projects?.slice(0, isLoadMore ? projects.length : (window.innerWidth >= 1024 ? 3 : 2)).map((item) => (
-                        <div key={item.$id} className="relative group cursor-pointer hover:scale-105 transition-all duration-300 h-full">
+                        <div key={item.$id} className="relative group hover:scale-105 transition-all duration-300 h-full">
                             <div className="absolute -inset-1 bg-gradient-to-r from-red-300 to-violet-300 rounded-lg blur opacity-50 group-hover:opacity-70 transition duration-1000 group-hover:duration-200 h-full"></div>
-                            <CCard className="relative bg-[var(--primary-dark)] shadow shadow-white rounded-xl p-[3%] w-full h-full">
+
+                            <CCard className="relative bg-[var(--primary-dark)] shadow shadow-white rounded-xl p-[3%] w-full h-full transition-opacity duration-300">
                                 <div
                                     className="CCardImage"
                                     style={{
-                                        backgroundImage: `url(${item.src})`,
+                                        backgroundImage: `url(${item.Image_src})`,
                                         backgroundPosition: 'center',
                                         backgroundSize: 'cover',
                                         backgroundRepeat: 'no-repeat',
@@ -54,8 +56,13 @@ const Projects = () => {
                                         <CCardText>&#8226; {item.description}</CCardText>
                                         <CCardText>&#8226; {item.language.join(', ')}</CCardText>
                                     </div>
-                                    <CButton className="button3" href={item.link} target="_blank">Project Link</CButton>
+                                    <CButton className="button3" href={item.link} target="_blank">Github Link</CButton>
                                 </CCardBody>
+                                {
+                                    item.view_site && <a href={item.view_site} target="_blank" rel="noreferrer" className="absolute top-2.5 right-2.5 flex items-center gap-1 justify-center px-1 rounded cursor-pointer text-white text-lg font-bold bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        View <FaArrowUpRightFromSquare size={13} />
+                                    </a>
+                                }
                             </CCard>
 
                         </div>

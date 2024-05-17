@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Databases } from "appwrite";
+import { Databases, Query } from "appwrite";
 import client from "../lib/appwrite";
 import { Image } from "react-bootstrap";
 
@@ -10,7 +10,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await database.listDocuments('662d22e1001dddbf3529', '662d231c002c59397c3d');
+        const res = await database.listDocuments('662d22e1001dddbf3529', '662d231c002c59397c3d', [Query.orderDesc('$createdAt')]);
         setData(res.documents);
       } catch (error) {
         console.error(error);
