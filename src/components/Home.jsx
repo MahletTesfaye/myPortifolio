@@ -44,12 +44,12 @@ const Home = () => {
     return (
         <div className="flex flex-col-reverse sm:flex-row justify-between gap-y-5">
             <div className={`my-auto sm:w-1/2 ${isScreenActive ? 'slide-in-left' : 'hidden'}`}>
-                <div className="text-black text-center">
+                <div className="text-black text-center px-10">
                     <div className="bold text-2xl hover:after:content-['_😎']">
                         Hi, I'm <b className="text-[var(--primary-medium)]">MAHLET TESFAYE</b>
                     </div>
-                    <div>Software Information and Technology Engineering (SITE),</div>
-                    <div>software stream student, AAiT</div>
+                    <div className="text-lg mt-1">FULL-STACK DEVELOPER</div>
+                    <div>UI/UX Designer | Wordpress Developer | Frontend Developer | Backend Developer</div>
                 </div>
                 <div className="flex justify-center">
                     {
