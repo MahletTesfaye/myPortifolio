@@ -56,7 +56,7 @@ const Projects = () => {
                                         <CCardText>&#8226; {item.description}</CCardText>
                                         <CCardText>&#8226; {item.language.join(', ')}</CCardText>
                                     </div>
-                                    <CButton className="button3" href={item.link} target="_blank">Github Link</CButton>
+                                    {item.link && <CButton className="button3" href={item.link} target="_blank">Github Link</CButton>}
                                 </CCardBody>
                                 {
                                     item.view_site && <a href={item.view_site} target="_blank" rel="noreferrer" className="absolute top-2.5 right-2.5 flex items-center gap-1 justify-center px-1 rounded cursor-pointer text-white text-lg font-bold bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
