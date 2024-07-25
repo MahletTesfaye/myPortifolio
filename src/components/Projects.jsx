@@ -4,6 +4,7 @@ import { CCard, CCardBody, CCardTitle, CCardText, CButton } from "@coreui/react"
 import { Databases, Query } from "appwrite";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const database = new Databases(client);
 
@@ -32,7 +33,11 @@ const Projects = () => {
     };
     return (
         <div className="bg-[var(--primary-dark)] text-white">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 p-[5%] gap-10 items-start">
+            <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 p-[5%] gap-10 items-start"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}>
                 {
                     projects?.slice(0, isLoadMore ? projects.length : (window.innerWidth >= 1024 ? 3 : 2)).map((item) => (
                         <div key={item.$id} className="relative group hover:scale-105 transition-all duration-300 h-full">
@@ -68,7 +73,7 @@ const Projects = () => {
                         </div>
                     ))
                 }
-            </div>
+            </motion.div>
             <div className="font-bold flex justify-center w-full items-center pb-4 cursor-pointer" onClick={toggleLoadMore} >
                 {
                     isLoadMore ? <>Show less <MdExpandLess className="hover:animate-bounce" /></> : <>Load more <MdExpandMore className="hover:animate-bounce" /></>

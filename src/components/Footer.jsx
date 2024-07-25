@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from 'react';
 import { MdEmail } from "react-icons/md";
 import { VscGithubInverted } from "react-icons/vsc";
 import { FaLinkedin } from "react-icons/fa";
@@ -9,11 +9,27 @@ import { BiUpArrowCircle } from "react-icons/bi";
 import { Link } from "react-scroll";
 
 function Footer() {
+    const [isTop, setIsTop] = useState(true);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY === 0) {
+                setIsTop(true);
+            } else {
+                setIsTop(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
         <div className="w-full font-bold pt-7 text-[14px] flex justify-around text-white h-14 sticky bottom-0 bg-gradient-to-t from-[var(--primary-dark)] to-transparent ">
             <FaHandPointRight size={22} className='absolute bottom-0.5 left-0.5 -rotate-12' />
             <FaHandPointLeft size={22} className='absolute bottom-0.5 right-0.5 rotate-12' />
-            <Link to="Home" offset={-70} className="absolute bottom-10 right-6 hover:animate-bounce cursor-pointer"><BiUpArrowCircle size={25} color="#962BAC" /></Link>
+            {!isTop && <Link to="Home" offset={-70} className="absolute bottom-10 right-6 hover:animate-bounce cursor-pointer"><BiUpArrowCircle size={25} color="#962BAC" /></Link>}
             <a href="https://mail.google.com/mail/u/0/?ogbl#inbox" target="_blank" rel="noreferrer" className="flex">
                 <MdEmail />
                 <div className="hidden md:block md:ml-2">mahlettenayeah94@gmail.com</div>

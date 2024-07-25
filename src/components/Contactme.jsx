@@ -46,7 +46,7 @@ const Contactme = () => {
   });
 
   return (
-    <div className='p-[4%_3%] overflow-hidden relative bg-gradient-to-tr grid sm:grid-cols-2 lg:grid-cols-3 justify-center gap-10 md:justify-between from-violet-200 to-red-100 rounded-t-3xl shadow-2xl '>
+    <div className='p-[5%_3%] overflow-hidden relative bg-gradient-to-tr grid sm:grid-cols-2 lg:grid-cols-3 justify-center gap-10 md:justify-between from-violet-200 to-red-100 rounded-t-3xl shadow-2xl '>
 
       <div className="flex flex-col gap-y-7 text-center my-auto">
         <div className="text-xl font-bold text-[var(--primary-dark)]">LET'S START <span className='text-[var(--primary-medium)]'>PROJECT WITH ME </span>👩🏻‍💻</div>

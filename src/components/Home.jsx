@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { IoMdDownload } from "react-icons/io";
-import { Image } from "react-bootstrap";
+// import { Image } from "react-bootstrap";
 import client from "../lib/appwrite";
 import { Databases } from "appwrite";
+import { motion } from 'framer-motion';
 
 const database = new Databases(client);
 const Home = () => {
     const [data, setData] = useState([]);
-    const [animationClass, setAnimationClass] = useState(true);
 
     useEffect(() => {
         const fetchResume = async () => {
@@ -24,19 +24,12 @@ const Home = () => {
         };
 
         fetchResume();
-        setAnimationClass('slide-in');
-
-        // clean up function
-        return () => {
-            setAnimationClass('');
-        }
-        
     }, []);
 
     return (
-        <div className="flex flex-col-reverse sm:flex-row justify-between gap-y-5">
-            <div className={`my-auto sm:w-1/2 ${animationClass ? 'slide-in-left' : 'hidden'}`}>
-                <div className="text-black text-center px-10">
+        <div className="flex flex-col-reverse sm:flex-row justify-between gap-10">
+            <motion.div className='my-auto sm:w-1/2 pl-[5%]' initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} >
+                <div className="text-black text-center">
                     <div className="bold text-2xl hover:after:content-['_😎']">
                         Hi, I'm <b className="text-[var(--primary-medium)]">MAHLET TESFAYE</b>
                     </div>
@@ -60,8 +53,8 @@ const Home = () => {
                         ))
                     }
                 </div>
-            </div>
-            <Image src="/my_photo.svg" className={`mt-5 sm:w-1/2 ${animationClass ? 'slide-in-right' : 'hidden'}`} alt="My Photo" />
+            </motion.div>
+            <motion.img src="/my_photo.svg" alt="My Photo" className='mt-5 sm:w-1/2' initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} />
         </div>
     );
 };

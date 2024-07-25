@@ -9,6 +9,8 @@
     --secondary-dark: rgb(75, 75, 75);
     --secondary-medium: rgb(224, 222, 222);
     --secondary-light: rgb(245, 242, 242);
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 @layer base {
@@ -17,11 +19,7 @@
     }
 
     .nav_link {
-        @apply cursor-pointer mr-6 hidden md:block hover:w-fit hover:border-solid hover:border-b-2 hover:border-[var(--primary-dark)] font-semibold text-[var(--primary-medium)]
-    }
-
-    .nav_link2 {
-        @apply cursor-pointer m-1 text-[var(--primary-medium)] font-semibold
+        @apply cursor-pointer hover:border-solid hover:border-b-2 hover:border-[var(--primary-light)] rounded-md font-semibold text-[var(--primary-medium)] p-1
     }
 
     .button {
@@ -29,7 +27,7 @@
     }
 
     .button2 {
-        @apply border-2 border-[var(--primary-medium)] font-semibold py-0.5 px-2 rounded-md text-[var(--primary-medium)] hover:bg-[var(--primary-medium)] hover:text-white bg-white
+        @apply border-2 border-[var(--primary-light)] font-semibold py-1 px-2 rounded-md text-[var(--primary-medium)] hover:bg-[var(--primary-medium)] hover:text-white
     }
 
     .button3 {
@@ -40,52 +38,4 @@
         @apply text-[var(--primary-medium)] font-semibold shadow-md hover:shadow-white backdrop-blur-lg shadow-[var(--primary-light)] rounded-md bg-white py-1 px-2 hover:text-white hover:bg-[var(--primary-medium)]
     }
 
-}
-
-.slide-in-left {
-    animation: slide-in-left 1.5s ease-out both;
-}
-
-.slide-in-right {
-    animation: slide-in-right 1.5s ease-out both;
-}
-
-.slide-in-up {
-    animation: slide-in-up 1.5s ease-out both;
-}
-
-@keyframes slide-in-up {
-    0% {
-        transform: translateY(50%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-in-left {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-in-right {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }

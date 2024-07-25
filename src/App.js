@@ -11,11 +11,13 @@ function App() {
   return (
     <div className="App">
       <TopBar />
-      <section id="Home"><Home /></section>
-      <section id="Aboutme"><About /></section>
-      <section id="Projects"><Projects /></section>
-      <section id="Blog"><Blog /></section>
-      <section id="Contactme"><Contact /></section>
+      <div className="overflow-x-hidden">
+        <section id="Home"><Home /></section>
+        <section id="Aboutme"><About /></section>
+        <section id="Projects"><Projects /></section>
+        <section id="Blog"><Blog /></section>
+        <section id="Contactme"><Contact /></section>
+      </div>
       <Footer />
     </div>
   );
@@ -23,16 +25,3 @@ function App() {
 
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-

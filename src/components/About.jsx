@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Databases } from "appwrite";
 import client from "../lib/appwrite";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
+import { motion } from "framer-motion";
 
 const database = new Databases(client);
 
@@ -29,11 +30,15 @@ const About = () => {
         }
         fetchSkills();
     })
-    
+
     return (
         <div className="flex flex-col md:flex-row text-[14px] m-[5%] gap-x-16 gap-y-5">
             <div className="md:w-1/2 rounded-xl before:rounded-xl bg-gradient-to-r from-[var(--primary-dark)] to-white lg:-rotate-3 my-auto py-16 before:-skew-y-3 before:bg-gradient-to-r before:from-[var(--primary-medium)] before:to-white backdrop-blur-lg before:-ml-[10%] before:absolute before:inset-1">
-                <div className="relative pr-[10%]">
+                <motion.div className="relative pr-[10%]"
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1 }}>
                     <div className="text-[24px] mb-[3%] font-bold">OVER<span className="text-[var(--primary-medium)]">VIEW</span></div>
                     <div>
                         I am a software and information system technology (SITE) (Software stream) student  in AAiT, Addis Ababa, Ethiopia.
@@ -85,10 +90,14 @@ const About = () => {
                             </div>
                         )}
                     </div>
-                </div>
+                </motion.div>
             </div>
 
-            <div className="md:w-1/2">
+            <motion.div className="md:w-1/2"
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}>
                 <div className="text-[24px] mb-[3%] font-bold">SK<span className="text-[var(--primary-medium)]">ILL</span></div>
                 {data && data.map((item) => (
                     <div key={item.$id} className="relative border p-3 overflow-hidden rounded-xl shadow-lg my-2">
@@ -107,7 +116,7 @@ const About = () => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     )
 }
