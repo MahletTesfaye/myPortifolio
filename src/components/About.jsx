@@ -61,10 +61,9 @@ const About = () => {
                         {isEducationExpanded && (
                             <div className="mt-2 px-7 border rounded-lg shadow">
                                 <ol className="list-disc list-inside">
-                                    <li>AAiT, Addis Ababa</li>
-                                    <li>Software Information and Technology Engineering (SITE), Software stream</li>
-                                    <li>Expected Graduation Year: 2025 GC</li>
-                                    <li>GPA: 3.5</li>
+                                    <li>Bachelor's degree, Software Engineering</li>
+                                    <li>Addis Ababa University</li>
+                                    <li>CGPA: 3.5</li>
                                 </ol>
                             </div>
                         )}
