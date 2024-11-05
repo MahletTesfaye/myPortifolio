@@ -34,7 +34,7 @@ const Home = () => {
                         Hi, I'm <b className="text-[var(--primary-medium)]">MAHLET TESFAYE</b>
                     </div>
                     <div className="text-lg mt-1">FULL-STACK DEVELOPER</div>
-                    <div>UI/UX Designer | Wordpress Developer | Frontend Developer | Backend Developer</div>
+                    <div>UI/UX Designer | Full-Stack Web Developer | Mobile App Developer</div>
                 </div>
                 <div className="flex justify-center">
                     {

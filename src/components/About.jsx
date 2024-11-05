@@ -41,10 +41,7 @@ const About = () => {
                     transition={{ duration: 1 }}>
                     <div className="text-[24px] mb-[3%] font-bold">OVER<span className="text-[var(--primary-medium)]">VIEW</span></div>
                     <div>
-                        I am a software and information system technology (SITE) (Software stream) student  in AAiT, Addis Ababa, Ethiopia.
-                    </div>
-                    <div>
-                        After in depth understanding of the course and department, I am getting more interested and excited about computer software, new technologies and the team work.
+                    I am an experienced Full-Stack Developer with a strong foundation in building visually appealing, user-centered applications across multiple platforms. With expertise in front-end frameworks like React and Next.js, cross-platform mobile development in Flutter, and UI/UX design in Figma, I bring a comprehensive approach to creating engaging digital experiences. My skill set enables me to manage the full development lifecycle.
                     </div>
                     <div>
                         <div className="mt-5 font-bold sm:text-lg text-[var(--primary-dark)] ">
@@ -62,7 +59,7 @@ const About = () => {
                             <div className="mt-2 px-7 border rounded-lg shadow">
                                 <ol className="list-disc list-inside">
                                     <li>Bachelor's degree, Software Engineering</li>
-                                    <li>Addis Ababa University</li>
+                                    <li>AAiT, Addis Ababa University</li>
                                     <li>CGPA: 3.5</li>
                                 </ol>
                             </div>
@@ -84,7 +81,6 @@ const About = () => {
                                 <ol className="list-disc list-inside">
                                     <li>Drawing</li>
                                     <li>Giving tutor for grade 4, 8, 10 and 11 students in Addis Ababa.</li>
-                                    <li>Participating and developing team leadership in 'Gbi Gubae' (activities in orthodox church through the university collaborating with ‘Mahibere Kidusan').</li>
                                 </ol>
                             </div>
                         )}
