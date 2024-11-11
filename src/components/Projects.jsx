@@ -39,7 +39,7 @@ const Projects = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}>
                 {
-                    projects?.slice(0, isLoadMore ? projects.length : (window.innerWidth >= 1024 ? 3 : 2)).map((item) => (
+                    projects?.slice(0, isLoadMore ? projects.length : (window.innerWidth >= 1024 ? 6 : 4)).map((item) => (
                         <div key={item.$id} className="relative group hover:scale-105 transition-all duration-300 h-full">
                             <div className="absolute -inset-1 bg-gradient-to-r from-red-300 to-violet-300 rounded-lg blur opacity-50 group-hover:opacity-70 transition duration-1000 group-hover:duration-200 h-full"></div>
 
